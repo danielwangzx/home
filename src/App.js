@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.scss';
+import { userLogin } from './actions/user';
+import { connect } from 'react-redux';
 
-function App() {
+function App({ user, userLogin }) {
+  console.log(user)
+  console.log(typeof userLogin)
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +21,11 @@ function App() {
         >
           haha
         </a>
+        <button onClick={() => userLogin(12)}>click</button>
       </header>
     </div>
   );
 }
 
-export default App;
+const actualApp = connect(({ user }) => ({ user }), { userLogin })(App);
+export default actualApp;
