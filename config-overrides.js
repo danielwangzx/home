@@ -1,8 +1,12 @@
-const { override, fixBabelImports, addDecoratorsLegacy } = require("customize-cra");
+const { override, fixBabelImports, addDecoratorsLegacy, addWebpackAlias } = require("customize-cra");
+const path = require('path');
 module.exports = override(
     fixBabelImports("import", {
         libraryName: "antd",
         libraryDirectory: "es",
         style: "css"
     }),
-    addDecoratorsLegacy())
+    addDecoratorsLegacy(),
+    addWebpackAlias({
+        ['@']: path.resolve(__dirname, 'src')
+      }))

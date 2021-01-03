@@ -5,6 +5,7 @@ import { userLogin } from './actions/user';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Pages/Home'
+import PrivateRoute from './Components/PrivateRoute'
 
 @connect(({ user }) => ({ user }), { userLogin })
 class App extends React.Component {
@@ -13,11 +14,12 @@ class App extends React.Component {
     console.log(user);
     return (
       <Switch>
-        <Route path='/home' exact component={Home}></Route>
-        <Route path='/login' component={()=>(<div>hellwo</div>)}></Route>
+        <Route path='/home' component={Home}></Route>
+        <Route path='/login' component={()=>(<div>please login</div>)}></Route>
         <Route path='/detail' exact component={null}></Route>
         <Route path='/detail/:id' component={null}></Route>
         <Redirect to="/home" from='/' exact/>
+        <PrivateRoute to='/guard' component={()=>(<div>rekt</div>)}/>
         <Route component={()=>(<div>oops not found</div>)}/>
       </Switch>)
   };
