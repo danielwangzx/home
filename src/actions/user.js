@@ -5,3 +5,9 @@ export const userLogin = (payload) => {
         payload
     }
 }
+export const userLoginSaga = (payload)=>{
+    return {
+        type: 'login',
+        payload
+    }
+}

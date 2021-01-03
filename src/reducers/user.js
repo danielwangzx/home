@@ -2,7 +2,8 @@ import { USER } from '../constants/actionConstants'
 const initialState = {
     name:'hahah'
 }
-export default (state=initialState, { type, payload }) => {
+const user = (state=initialState, { type, payload }) => {
+    // console.log(payload,'payload',type,'type')
     switch (type) {
         case USER.USER_LOGIN:
             return {
@@ -13,3 +14,5 @@ export default (state=initialState, { type, payload }) => {
             return state;
     }
 }
+
+export default user

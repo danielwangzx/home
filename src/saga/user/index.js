@@ -1,10 +1,10 @@
 
-import { USER } from '@/constants/actionConstants'
 import {
     call, put, takeEvery, fork,
-} from 'redux-saga/effects'
+} from 'redux-saga/effects';
 
-const api = () => {
+const fakeapi = (action) => {
+    console.log('hahahah')
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve('xiaoming')
@@ -12,12 +12,21 @@ const api = () => {
     })
 }
 
+function* updateName(action) {
+    console.log(action,'action')
+    const response = yield call(fakeapi, action);
+    console.log(response)
+     yield put({
+        type: 'USER_LOGIN',
+        payload: response
+    })
+
+}
 function* watchUpdateName() {
-    console.log(USER)
-    yield takeEvery()
+    yield takeEvery('login', updateName)
 }
 
-export default [fork(watchUpdateName)]
+export const userSaga = [fork(watchUpdateName)]
 
 
 

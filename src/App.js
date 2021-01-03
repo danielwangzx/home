@@ -1,17 +1,11 @@
-import logo from './logo.svg';
 import React from 'react';
 import './App.scss';
-import { userLogin } from './actions/user';
-import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './Pages/Home'
 import PrivateRoute from './Components/PrivateRoute'
 
-@connect(({ user }) => ({ user }), { userLogin })
 class App extends React.Component {
   render() {
-    const { user, userLogin } = this.props;
-    console.log(user);
     return (
       <Switch>
         <Route path='/home' component={Home}></Route>
