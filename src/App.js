@@ -3,31 +3,23 @@ import React from 'react';
 import './App.scss';
 import { userLogin } from './actions/user';
 import { connect } from 'react-redux';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import Home from './Pages/Home'
 
 @connect(({ user }) => ({ user }), { userLogin })
 class App extends React.Component {
   render() {
-    const {user, userLogin} = this.props;
+    const { user, userLogin } = this.props;
     console.log(user);
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-        </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            haha
-        </a>
-          <button onClick={() => userLogin(12)}>click</button>
-        </header>
-      </div>
-    )
+      <Switch>
+        <Route path='/home' exact component={Home}></Route>
+        <Route path='/login' component={()=>(<div>hellwo</div>)}></Route>
+        <Route path='/detail' exact component={null}></Route>
+        <Route path='/detail/:id' component={null}></Route>
+        <Redirect to="/home" from='/' exact/>
+        <Route component={()=>(<div>oops not found</div>)}/>
+      </Switch>)
   };
 }
 
