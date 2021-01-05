@@ -19,5 +19,6 @@ class App extends React.Component {
   };
 }
 
+const a = 'hellow';
 
 export default App;
