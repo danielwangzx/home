@@ -6,7 +6,7 @@ export default function NotFound({ history }) {
             <Hexagon className='exception-page__icon' />
             <div className="message-box">
                 <h1>404</h1>
-                <p>Maybe we are lost?</p>
+                <p>Do not go gentle into that good night...</p>
                 <div className="buttons-con">
                     <div className="action-link--wrap">
                         <a href onClick={() => history.goBack()} className="link-button link-back-button">Go Back</a>
