@@ -3,6 +3,7 @@ import {
     notification
 } from 'antd';
 import { dispatch } from 'redux';
+import history from '@/history';
 const codeMessage = {
     200: '服务器成功返回请求的数据。',
     201: '新建或修改数据成功。',
@@ -20,10 +21,7 @@ const codeMessage = {
     503: '服务不可用，服务器暂时过载或维护。',
     504: '网关超时。'
 };
-export const baseURL =
-    process.env.UMI_ENV === 'uat'
-        ? 'http://ec2-3-106-139-227.ap-southeast-2.compute.amazonaws.com:3000/'
-        : process.env.NODE_ENV === 'production'
+export const baseURL = process.env.NODE_ENV === 'production'
             ? 'https://jiangren.com.au/'
             : 'http://localhost:3000/';
 const withCredentials = true;
@@ -62,7 +60,7 @@ axiosInstance.interceptors.response.use(
         if (status === 401) {
             // @HACK
             /* eslint-disable no-underscore-dangle */
-            getDvaApp()._store.dispatch({
+            dispatch({
                 type: 'login/logout'
             });
         } else if (status === 403) {
