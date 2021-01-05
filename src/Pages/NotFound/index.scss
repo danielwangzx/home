@@ -8,12 +8,11 @@
     width: 100;
   }
   &__icon {
-    position: absolute;
+    position: fixed;
     top: 50%;
     margin-top: -250px;
     margin-left: -100px;
     @media (max-width: 450px) {
-      position: absolute;
       top: 50%;
       left: 50%;
       margin-top: -350px;
@@ -24,7 +23,7 @@
 .message-box {
   height: 200px;
   width: 380px;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   margin-top: -100px;
@@ -48,21 +47,21 @@
 
 .buttons-con .action-link--wrap {
   margin-top: 40px;
-}
-.buttons-con .action-link--wrap a {
-  background: #68c950;
-  padding: 8px 25px;
-  border-radius: 4px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s linear;
-  cursor: pointer;
-  text-decoration: none;
-  margin-right: 10px;
-  &:hover {
-    background: #5a5c6c;
+  & a {
+    background: #68c950;
+    padding: 8px 25px;
+    border-radius: 4px;
     color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+    &:hover {
+      background: #5a5c6c;
+      color: #fff;
+    }
   }
 }
 

@@ -14,12 +14,10 @@ class App extends React.Component {
         <Route path='/detail' exact component={null}></Route>
         <Route path='/detail/:id' component={null}></Route>
         <Redirect to="/home" from='/' exact/>
-        <PrivateRoute path='/guard' component={()=>(<div>rekt</div>)}/>
+        <PrivateRoute path='/user' component={()=>(<div>rekt</div>)}/>
         <Route component={NotFound}/>
       </Switch>)
   };
 }
-
-const a = 'hellow';
 
 export default App;
