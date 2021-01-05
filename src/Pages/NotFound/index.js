@@ -1,11 +1,7 @@
-import React from 'react';
 import { ReactComponent as Hexagon } from './Hexagon.svg';
 import './index.scss';
-// import history from '@/history';
 
-export default class NotFound extends React.Component {
-    render() {
-        const { history } = this.props;
+export default function NotFound({ history }) {
         return (<div className='exception-page__container'>
             <Hexagon className='exception-page__icon' />
             <div className="message-box">
@@ -19,5 +15,4 @@ export default class NotFound extends React.Component {
                 </div>
             </div>
         </div>);
-    }
 }
