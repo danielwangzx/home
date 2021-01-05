@@ -86,3 +86,5 @@ export default function request(options) {
         .then(response => response)
         .catch(error => error);
 }
+
+'hello';
