@@ -1,5 +1,4 @@
-// var BACKGROUND_COLOR = "rgba(0,43,54,1)";   // 背景色
-var POINT_NUM = 80;                         // 屏幕上点的数目
+var BACKGROUND_COLOR = "rgba(0,0,0,0)";   // 背景色
 var POINT_COLOR = "rgba(231,202,127,0.7)";  // 点的颜色
 var LINE_LENGTH = 10000;                    // 点之间连线长度(的平方)
 
@@ -10,16 +9,12 @@ if (!document.querySelector('canvas')) {
     cvs = document.createElement("canvas")
     cvs.width = window.innerWidth;
     cvs.height = window.innerHeight;
-    cvs.style.cssText = "position:fixed;top:0px;left:0px;z-index:-1;opacity:1.0;";
-
-    // cvs.style.cssText = "position:fixed;top:0px;left:0px;z-index:-1;opacity:1.0;background-repeat: repeat;background-image: url('@/images/backgrounds/polygons.jpg');";
+    cvs.style.cssText = "position:fixed;top:0px;left:0px;z-index:-1;opacity:1;";
     document.body.appendChild(cvs);
 } else {
     cvs = document.querySelector('canvas')
 }
 var ctx = cvs.getContext("2d");
-
-
 
 // var startTime = new Date().getTime();
 
@@ -120,7 +115,8 @@ function drawLine(p1, p2, deg) {
             } else return;
         }
         var t = (1.05 - dis2 / LINE_LENGTH) * 0.2 * deg;
-        ctx.strokeStyle = "rgba(231,202,127," + t + ")";
+        // ctx.strokeStyle = "rgba(231,202,127," + t + ")";
+        ctx.strokeStyle = "rgba(255,45,81," + t + ")";
         ctx.beginPath();
         ctx.lineWidth = 1.5;
         ctx.moveTo(p1.x, p1.y);
@@ -135,7 +131,7 @@ function drawLine(p1, p2, deg) {
 function drawFrame() {
     cvs.width = window.innerWidth;
     cvs.height = window.innerHeight;
-    // ctx.fillStyle = BACKGROUND_COLOR;
+    ctx.fillStyle = BACKGROUND_COLOR;
     ctx.fillRect(0, 0, cvs.width, cvs.height);
     var arr = (p0.x == null ? points : [p0].concat(points));
     for (var i = 0; i < arr.length; ++i) {
@@ -152,15 +148,16 @@ export const invokePoints = function () {
     var width = window.innerWidth
         || document.documentElement.clientWidth
         || document.body.clientWidth;
+    // Make sure the image is loaded first otherwise nothing will draw.
+    console.log(width)
     if (initated === false) {
-        if (width > 760) {
-            initPoints(POINT_NUM);
-            drawFrame();
+        if (width > 1440){
+            initPoints(110)
+        }  else if (width > 760) {
+            initPoints(80);
         } else {
-            initPoints(~~(POINT_NUM / 2));
-            drawFrame();
+            initPoints(40);
         }
+        drawFrame();
     }
-    initated = true;
-
 }
