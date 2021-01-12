@@ -1,13 +1,8 @@
 import React from 'react';
-import logo from '../../logo.svg';
-import { connect } from 'react-redux';
-import { userLoginSaga } from '@/actions/user';
 import './index.scss'
 
-@connect(({ user }) => ({ user }), { userLoginSaga })
 class Home extends React.Component {
     render() {
-        const { userLoginSaga } = this.props;
         return (
         //     <div className="App">
         //         <header className="App-header">

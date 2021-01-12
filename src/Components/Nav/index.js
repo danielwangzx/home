@@ -53,21 +53,6 @@ class NavBar extends Component {
               <Link to="/browse-tasks">Browse Tasks</Link>
             </li>
           </ul>
-          {
-        //   !this.props.user.email ?
-        //     <ul>
-        //       <li>
-        //         <div className="nav-bar__button--transparent">
-        //           <Link to={`${pathname}/signup`}>Sign Up</Link>
-        //         </div>
-        //       </li>
-        //       <li>
-        //         <div className="nav-bar__button--transparent">
-        //           <Link to={`${pathname}/login`}>Login</Link>
-        //         </div>
-        //       </li>
-        //     </ul>
-        //     :
             <ul>
               <div className="nav-bar__user">
                 <li>
@@ -81,13 +66,11 @@ class NavBar extends Component {
                 </li>
               </div>
             </ul>
-          }
         </div>
 
         <div className="nav-bar__container--mobile">
           <ul className="nav-bar__header">
             <li className="menu-icon" onClick={this.openMobileMenu}>
-              {/* <FontAwesomeIcon icon={faBars} /> */}
             </li>
             <li className="logo">
               <Link to="/home">Airtasker</Link>
@@ -102,29 +85,6 @@ class NavBar extends Component {
             <li>
               <Link to="/browse-tasks">Browse Tasks</Link>
             </li>
-            {/* {
-              !this.props.user.email ?
-                <>
-                  <li>
-                    <Link to={`${pathname}/signup`}>Sign Up</Link>
-                  </li>
-                  <li>
-                    <Link to={`${pathname}/login`}>Login</Link>
-                  </li>
-                </>
-                :
-                <>
-                  <li>
-                    <Link to="/my-tasks">My Tasks</Link>
-                  </li>
-                  <li>
-                    <Link to="/account/dashboard">Account</Link>
-                  </li>
-                  <li>
-                    <Link to="/home" onClick={this.props.logoutUser}>Log Out</Link>
-                  </li>
-                </>
-            } */}
           </ul>
         </div>
 

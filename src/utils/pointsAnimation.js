@@ -115,7 +115,6 @@ function drawLine(p1, p2, deg) {
             } else return;
         }
         var t = (1.05 - dis2 / LINE_LENGTH) * 0.2 * deg;
-        // ctx.strokeStyle = "rgba(231,202,127," + t + ")";
         ctx.strokeStyle = "rgba(255,45,81," + t + ")";
         ctx.beginPath();
         ctx.lineWidth = 1.5;
@@ -149,7 +148,6 @@ export const invokePoints = function () {
         || document.documentElement.clientWidth
         || document.body.clientWidth;
     // Make sure the image is loaded first otherwise nothing will draw.
-    console.log(width)
     if (initated === false) {
         if (width > 1440){
             initPoints(110)
@@ -158,6 +156,7 @@ export const invokePoints = function () {
         } else {
             initPoints(40);
         }
+        initated = true;
         drawFrame();
     }
 }
