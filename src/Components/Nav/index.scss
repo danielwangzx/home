@@ -1,22 +1,3 @@
-$button--pink: #e0446d;
-
-@mixin nav-bar__button {
-  position: relative;
-  top: 10px;
-  display: inline-block;
-  border-radius: 200px;
-  border: 3px solid rgba(41, 43, 50, 0.308);
-  color: #fff;
-  cursor: pointer;
-  font-size: 11px;
-  height: 27px;
-  letter-spacing: 0.44px;
-  line-height: 27px;
-  margin: 0px 10px 0 20px;
-  overflow: hidden;
-  text-align: center;
-  width: 90px;
-}
 
 .nav-bar {
   color: white;
@@ -27,119 +8,59 @@ $button--pink: #e0446d;
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
   z-index: 20;
-  font-family: Montserrat , Helvetica, sans-serif;
+  font: bold 14px/1.4 'Open Sans', arial, sans-serif;
   font-weight: 700;
+  overflow-y: hidden;
   &__container{
     &--web {
       margin: 0 auto;
       height: auto;
-      max-width: 1024px;
       position: relative;
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-    }
-    &--mobile {
-      display: none;
-      color: black !important;
-      .nav-bar__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px ;
-        .nav-bar__button--pink {
-          top: 0px;
-          width: 30px;  
-          margin: 0px ;   
-        }
-        .logo{
-          border: none;
-          * {
-          color: black;
-          }
-        }
+      span {
+        height:100%;
+        text-align: center;
       }
-      .nav-bar__menu {
-        background-color: white;
-        display: none;
-        height: 110vh;
-        width: 110vw;
-        position: relative;
-        right: 10px;
-        bottom: 10px;
-        * {
-          color: black;
-        }
-        li {
-          display: block;
-          margin: 20px;
-        }
+      ul { 
+        margin: auto 0; 
+        padding: 0; 
+        list-style: none; 
+        display: table;
+        width: 600px;
+        text-align: center;
       }
-    }
-  }
-
-  ul {
-    padding: 0px; 
-    margin: 5px;
-    li {
-      margin: 0px 10px ;
-      list-style: none;
-      display: inline-block;
-      &.logo {
+      li { 
+        display: table-cell; 
+        position: relative; 
+        padding: 5px 0;
+      }
+      a {
+        color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
         display: inline-block;
-        padding-right: 20px;
-        border-right: solid grey 1px;
+        padding: 15px 20px;
+        position: relative;
       }
-    }
-    .nav-bar__user {
-      margin: 15px;
-    }
-  }
-  a {
-    text-decoration: none;
-    color: white;
-  }
-
-  &__button {
-   
-    &--pink {
-      @include nav-bar__button();
-      text-shadow: 0 1px 1px #9a0137;
-      background: $button--pink;
-      border: 3px solid rgba(197, 40, 59, 0.308);
-
-    }
-    &--transparent {
-      @include nav-bar__button();
-      text-shadow: 0 1px 1px rgb(142, 205, 241);
-      background: transparent;
-    }
-  }
-}
-
-@media only screen and (min-width: 440px) {
-  .nav-bar__container {
-    margin-top: -10px;
-  }
-  .nav-bar.sticky {
-    a {
-      color: rgb(156, 150, 150);
-    }
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
-    margin: 0;
-    .nav-bar__button {
-      &--pink {
-        a {
-          color: white;
-        }
+      a:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background:red;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
       }
-      &--transparent {
-        color: rgba(182, 179, 179, 0.815);
-        border: 3px solid rgba(171, 178, 202, 0.308);
-        text-shadow: 0 1px 1px rgb(67, 167, 230);
+      a:hover:after { 
+        width: 100%; 
+        left: 0; 
       }
     }
   }
@@ -160,3 +81,22 @@ $button--pink: #e0446d;
     }
   }
 }
+
+@media only screen and (min-width: 440px) {
+	.nav-bar__container {
+	  margin-top: -5px;
+	}
+	.nav-bar.sticky {
+	  a {
+    color: rgb(156, 150, 150);
+    &:after{
+      background:rgb(156, 150, 150);
+    }
+	  }
+	  background-color: #fff;
+	  border-bottom: 1px solid #ccc;
+	  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    
+	}
+  }

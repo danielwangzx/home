@@ -16,7 +16,7 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route path='/home' component={Home}></Route>
-            <Route path='/profolio' component={Profolio}></Route>
+            <Route path='/portfolio' component={Profolio}></Route>
             <Route path='/detail' exact component={null}></Route>
             <Route path='/detail/:id' component={null}></Route>
             <Redirect to="/home" from='/' exact />

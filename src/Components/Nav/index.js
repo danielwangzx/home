@@ -36,55 +36,17 @@ class NavBar extends Component {
     }
   }
   render() {
-    let { pathname } = this.props.history.location;
+    const { pathname } = this.props.history.location;
+    const { history } = this.props;
     return (
       <header className={`nav-bar ${(this.state.sticky || pathname !== "/home") ? 'sticky' : ''}`} >
         <div className="nav-bar__container--web">
+          <span>Daniel Wang</span>
           <ul>
-            <li className="logo">
-              <Link to="/home">Airtasker</Link>
-            </li>
-            <li>
-              <div className="nav-bar__button--pink">
-                <Link to={`${pathname}/post`}>Post a Task</Link>
-              </div>
-            </li>
-            <li>
-              <Link to="/browse-tasks">Browse Tasks</Link>
-            </li>
-          </ul>
-            <ul>
-              <div className="nav-bar__user">
-                <li>
-                  <Link to="/my-tasks">My Tasks</Link>
-                </li>
-                <li>
-                  <Link to="/account/dashboard">Account</Link>
-                </li>
-                <li>
-                  <Link to="/home" onClick={this.props.logoutUser}>Log Out</Link>
-                </li>
-              </div>
-            </ul>
-        </div>
-
-        <div className="nav-bar__container--mobile">
-          <ul className="nav-bar__header">
-            <li className="menu-icon" onClick={this.openMobileMenu}>
-            </li>
-            <li className="logo">
-              <Link to="/home">Airtasker</Link>
-            </li>
-            <li>
-              <div className="nav-bar__button--pink">
-                <Link to={`${pathname}/post`}>+</Link>
-              </div>
-            </li>
-          </ul>
-          <ul className="nav-bar__menu" ref={this.mobileMenuRef}>
-            <li>
-              <Link to="/browse-tasks">Browse Tasks</Link>
-            </li>
+            <li><a href onClick={()=>history.push('/home')} className='animate__animated animate__flipInX'>Home</a></li>
+            <li><a href onClick={()=>history.push('/portfolio')}>Portfolio</a></li>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
 
