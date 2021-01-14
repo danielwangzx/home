@@ -9,7 +9,6 @@ body {
     "Segoe UI", "Roboto";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
