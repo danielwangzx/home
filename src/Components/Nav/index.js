@@ -41,7 +41,6 @@ class NavBar extends Component {
     return (
       <header className={`nav-bar ${(this.state.sticky || pathname !== "/home") ? 'sticky' : ''}`} >
         <div className="nav-bar__container--web">
-          <span>Daniel Wang</span>
           <ul>
             <li><a href onClick={()=>history.push('/home')} className='animate__animated animate__flipInX'>Home</a></li>
             <li><a href onClick={()=>history.push('/portfolio')}>Portfolio</a></li>
