@@ -1,12 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-// import { connect } from "react-redux";
-// import { logoutUser } from "../../redux/actions";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./index.scss";
-// TODO @SONIA
 
 class NavBar extends Component {
   constructor() {
@@ -42,7 +36,7 @@ class NavBar extends Component {
       <header className={`nav-bar ${(this.state.sticky || pathname !== "/home") ? 'sticky' : ''}`} >
         <div className="nav-bar__container--web">
           <ul>
-            <li><a href onClick={()=>history.push('/home')} className='animate__animated animate__flipInX'>Home</a></li>
+            <li><a href onClick={()=>history.push('/home')}>Home</a></li>
             <li><a href onClick={()=>history.push('/portfolio')}>Portfolio</a></li>
             <li><a href="#">Resume</a></li>
             <li><a href="#">Contact</a></li>
