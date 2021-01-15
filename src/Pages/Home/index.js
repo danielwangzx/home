@@ -5,7 +5,7 @@ class Home extends React.Component {
     render() {
         return (
             <>
-                <div className='page-container'>page1</div>
+                <section className='section-container home'>page1</section>
                 <div className='page-container'>page2</div>
                 <div className='page-container'>page3</div>
             </>

@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { invokePoints } from '@/utils/pointsAnimation'
+import { invokePoints, setInProfolio } from '@/utils/pointsAnimation';
 import './index.scss';
 
 const profolioProjects = [
@@ -22,6 +22,8 @@ const profolioProjects = [
 export default class Profolio extends Component {
     componentDidMount() {
         invokePoints();
+    }
+    componentWillUnmount() {
     }
     render() {
         return (

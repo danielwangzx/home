@@ -128,19 +128,19 @@ function drawLine(p1, p2, deg) {
 
 //绘制每一帧
 function drawFrame() {
-    cvs.width = window.innerWidth;
-    cvs.height = window.innerHeight;
-    ctx.fillStyle = BACKGROUND_COLOR;
-    ctx.fillRect(0, 0, cvs.width, cvs.height);
-    var arr = (p0.x == null ? points : [p0].concat(points));
-    for (var i = 0; i < arr.length; ++i) {
-        for (var j = i + 1; j < arr.length; ++j) {
-            drawLine(arr[i], arr[j], 1.0);
+        cvs.width = window.innerWidth;
+        cvs.height = window.innerHeight;
+        ctx.fillStyle = BACKGROUND_COLOR;
+        ctx.fillRect(0, 0, cvs.width, cvs.height);
+        var arr = (p0.x == null ? points : [p0].concat(points));
+        for (var i = 0; i < arr.length; ++i) {
+            for (var j = i + 1; j < arr.length; ++j) {
+                drawLine(arr[i], arr[j], 1.0);
+            }
+            arr[i].draw();
+            arr[i].move();
         }
-        arr[i].draw();
-        arr[i].move();
-    }
-    window.requestAnimationFrame(drawFrame);
+        window.requestAnimationFrame(drawFrame);
 }
 
 export const invokePoints = function () {
@@ -149,9 +149,9 @@ export const invokePoints = function () {
         || document.body.clientWidth;
     // Make sure the image is loaded first otherwise nothing will draw.
     if (initated === false) {
-        if (width > 1440){
-            initPoints(110)
-        }  else if (width > 760) {
+        if (width > 1440) {
+            initPoints(120)
+        } else if (width > 760) {
             initPoints(80);
         } else {
             initPoints(40);

@@ -6,10 +6,10 @@ class NavBar extends Component {
   constructor() {
     super();
     this.state = {
-      sticky: false
+      sticky: false,
+      showContactModal: false,
     };
     this.mobileMenuRef = React.createRef();
-
   }
 
   componentDidMount() {
@@ -29,6 +29,9 @@ class NavBar extends Component {
       this.mobileMenuRef.current.style.display = "block";
     }
   }
+  showContactModal = () => {
+    this.setState({ showContactModal: true });
+  }
   render() {
     const { pathname } = this.props.history.location;
     const { history } = this.props;
@@ -36,10 +39,10 @@ class NavBar extends Component {
       <header className={`nav-bar ${(this.state.sticky || pathname !== "/home") ? 'sticky' : ''}`} >
         <div className="nav-bar__container--web">
           <ul>
-            <li><a href onClick={()=>history.push('/home')}>Home</a></li>
-            <li><a href onClick={()=>history.push('/portfolio')}>Portfolio</a></li>
+            <li><a href onClick={() => history.push('/home')}>Home</a></li>
+            <li><a href onClick={() => history.push('/portfolio')}>Portfolio</a></li>
             <li><a href="#">Resume</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href onClick={() => this.showContactModal()}>Contact</a></li>
           </ul>
         </div>
 
