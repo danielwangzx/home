@@ -4,6 +4,7 @@ var LINE_LENGTH = 10000;                    // 点之间连线长度(的平方)
 
 // 创建背景画布
 var initated = false;
+var isOnTargetPage;
 var cvs;
 if (!document.querySelector('canvas')) {
     cvs = document.createElement("canvas")
@@ -63,7 +64,7 @@ class Point {
     }
 
     draw = () => {
-        ctx.fillStyle = this.color;
+        ctx.fillStyle = isOnTargetPage ? this.color : BACKGROUND_COLOR;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
         ctx.closePath();
@@ -115,7 +116,7 @@ function drawLine(p1, p2, deg) {
             } else return;
         }
         var t = (1.05 - dis2 / LINE_LENGTH) * 0.2 * deg;
-        ctx.strokeStyle = "rgba(255,45,81," + t + ")";
+        ctx.strokeStyle = isOnTargetPage? "rgba(255,45,81," + t + ")" : BACKGROUND_COLOR;
         ctx.beginPath();
         ctx.lineWidth = 1.5;
         ctx.moveTo(p1.x, p1.y);
@@ -128,19 +129,19 @@ function drawLine(p1, p2, deg) {
 
 //绘制每一帧
 function drawFrame() {
-        cvs.width = window.innerWidth;
-        cvs.height = window.innerHeight;
-        ctx.fillStyle = BACKGROUND_COLOR;
-        ctx.fillRect(0, 0, cvs.width, cvs.height);
-        var arr = (p0.x == null ? points : [p0].concat(points));
-        for (var i = 0; i < arr.length; ++i) {
-            for (var j = i + 1; j < arr.length; ++j) {
-                drawLine(arr[i], arr[j], 1.0);
-            }
-            arr[i].draw();
-            arr[i].move();
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+    ctx.fillStyle = BACKGROUND_COLOR;
+    ctx.fillRect(0, 0, cvs.width, cvs.height);
+    var arr = (p0.x == null ? points : [p0].concat(points));
+    for (var i = 0; i < arr.length; ++i) {
+        for (var j = i + 1; j < arr.length; ++j) {
+            drawLine(arr[i], arr[j], 1.0);
         }
-        window.requestAnimationFrame(drawFrame);
+        arr[i].draw();
+        arr[i].move();
+    }
+    window.requestAnimationFrame(drawFrame);
 }
 
 export const invokePoints = function () {
@@ -150,7 +151,7 @@ export const invokePoints = function () {
     // Make sure the image is loaded first otherwise nothing will draw.
     if (initated === false) {
         if (width > 1440) {
-            initPoints(120)
+            initPoints(110)
         } else if (width > 760) {
             initPoints(80);
         } else {
@@ -159,4 +160,8 @@ export const invokePoints = function () {
         initated = true;
         drawFrame();
     }
+}
+
+export const setOnTargetPage = (value)=>{
+    isOnTargetPage = value;
 }

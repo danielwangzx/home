@@ -28,19 +28,20 @@
   &__wrapper {
     width: 800px;
     height: 450px;
-    background-color: whitesmoke;
     display: flex;
     flex-direction: row;
     padding: 2rem;
     border: 10px solid;
     border-image-slice: 1;
     border-width: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
     &:nth-child(odd) {
       border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
-	}
-	&:nth-child(even){
-		border-image-source: linear-gradient(to left, #00c853, #b2ff59);
-	}
+    }
+    &:nth-child(even) {
+      border-image-source: linear-gradient(to left, #00c853, #b2ff59);
+    }
   }
   &--pic {
     width: 450px;

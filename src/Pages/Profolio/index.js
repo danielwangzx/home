@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { invokePoints, setInProfolio } from '@/utils/pointsAnimation';
+import { invokePoints, setOnTargetPage } from '@/utils/pointsAnimation';
 import './index.scss';
 
 const profolioProjects = [
@@ -21,9 +21,11 @@ const profolioProjects = [
 
 export default class Profolio extends Component {
     componentDidMount() {
+        setOnTargetPage(true);
         invokePoints();
     }
     componentWillUnmount() {
+        setOnTargetPage(false);
     }
     render() {
         return (

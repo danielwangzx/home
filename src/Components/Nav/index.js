@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import "./index.scss";
-
+import MobileNav from '@/Components/MobileNav';
 class NavBar extends Component {
   constructor() {
     super();
@@ -9,7 +9,6 @@ class NavBar extends Component {
       sticky: false,
       showContactModal: false,
     };
-    this.mobileMenuRef = React.createRef();
   }
 
   componentDidMount() {
@@ -22,13 +21,6 @@ class NavBar extends Component {
     });
   }
 
-  openMobileMenu = () => {
-    if (this.mobileMenuRef.current.style.display !== "none") {
-      this.mobileMenuRef.current.style.display = "none";
-    } else {
-      this.mobileMenuRef.current.style.display = "block";
-    }
-  }
   showContactModal = () => {
     this.setState({ showContactModal: true });
   }
@@ -36,16 +28,20 @@ class NavBar extends Component {
     const { pathname } = this.props.history.location;
     const { history } = this.props;
     return (
-      <header className={`nav-bar ${(this.state.sticky || pathname !== "/home") ? 'sticky' : ''}`} >
-        <div className="nav-bar__container--web">
-          <ul>
-            <li><a href onClick={() => history.push('/home')}>Home</a></li>
-            <li><a href onClick={() => history.push('/portfolio')}>Portfolio</a></li>
-            <li><a href="#">Resume</a></li>
-            <li><a href onClick={() => this.showContactModal()}>Contact</a></li>
-          </ul>
+      <header>
+        <div className={`nav-bar ${(this.state.sticky || pathname !== "/home") ? 'sticky' : ''}`} >
+          <div className="nav-bar__container--web">
+            <ul>
+              <li><a href onClick={() => history.push('/home')}>Home</a></li>
+              <li><a href onClick={() => history.push('/portfolio')}>Portfolio</a></li>
+              <li><a href="#">Resume</a></li>
+              <li><a href onClick={() => this.showContactModal()}>Contact</a></li>
+            </ul>
+          </div>
         </div>
-
+        <div className='nav-bar--mobile'>
+          <MobileNav />
+        </div>
       </header>
     );
   }
