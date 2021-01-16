@@ -41,7 +41,7 @@ var styles = {
         padding: '0.8em',
     },
     bmItem: {
-        display: 'inline-block',
+        display: 'block',
         color: 'antiquewhite',
         'margin-bottom': '15px'
     },
