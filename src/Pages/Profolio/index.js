@@ -31,8 +31,8 @@ export default class Profolio extends Component {
         return (
             <div className='portfolio'>
                 <ul className='project-showcase__container'>
-                    {profolioProjects.map((project) => {
-                        return (<li className='project-showcase__wrapper border-professioanal'>
+                    {profolioProjects.map((project,index) => {
+                        return (<li className='project-showcase__wrapper border-professioanal' key={index}>
                             <div className='project-showcase--pic'>hahahhahah</div>
                             <div className='project-showcase__article'>
                                 <div className='project-showcase__description'>{project.Description}
