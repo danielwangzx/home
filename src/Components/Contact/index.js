@@ -4,7 +4,7 @@ import normal from '../../images/backgrounds/normal.png'
 import blindfold from '../../images/backgrounds/blindfold.png'
 import greeting from '../../images/backgrounds/greeting.png'
 import emailjs from 'emailjs-com';
-// import { message } from 'antd'
+import { message } from 'antd';
 
 export default class Contact extends React.Component {
     state = {
@@ -41,12 +41,12 @@ export default class Contact extends React.Component {
         e.preventDefault();
         emailjs.sendForm('service_19wnsw9', 'template_4sh370f', e.target, 'user_JIshC0tiK3bIzyiBX00Pf')
             .then((result) => {
-                // message.success('thank you for your enquiry i will get back to you shortly')
+                message.success('thank you for your enquiry i will get back to you shortly')
                 setTimeout(() => {
                     this.props.closeForm();
                 }, 500)
             }, (error) => {
-                // message.error('opps, seems i used up all the email quota of this month!')
+                message.error('opps, seems i used up all the email quota of this month!')
             });
 
     }

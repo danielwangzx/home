@@ -11,6 +11,35 @@
   font-weight: 700;
   overflow-y: hidden;
   &__container {
+    &--link{
+      color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        display: inline-block;
+        padding: 15px 20px;
+        position: relative;
+        cursor: pointer;
+        &::after{
+          background: none repeat scroll 0 0 transparent;
+          bottom: 0;
+          content: "";
+          display: block;
+          height: 2px;
+          left: 50%;
+          position: absolute;
+          background: LightCoral;
+          transition: width 0.3s ease 0s, left 0.3s ease 0s;
+          width: 0;
+        }
+        &:hover::after{
+          width: 100%;
+          left: 0;
+        }
+        &:hover{
+          color:black
+        }
+    }
     &--web {
       margin: 0 auto;
       height: auto;
@@ -32,32 +61,32 @@
         position: relative;
         padding: 5px 0;
       }
-      a {
-        color: black;
-        text-transform: uppercase;
-        text-decoration: none;
-        letter-spacing: 0.15em;
-        display: inline-block;
-        padding: 15px 20px;
-        position: relative;
-        cursor: pointer;
-      }
-      a:after {
-        background: none repeat scroll 0 0 transparent;
-        bottom: 0;
-        content: "";
-        display: block;
-        height: 2px;
-        left: 50%;
-        position: absolute;
-        background: LightCoral;
-        transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0;
-      }
-      a:hover:after {
-        width: 100%;
-        left: 0;
-      }
+      // a {
+      //   color: black;
+      //   text-transform: uppercase;
+      //   text-decoration: none;
+      //   letter-spacing: 0.15em;
+      //   display: inline-block;
+      //   padding: 15px 20px;
+      //   position: relative;
+      //   cursor: pointer;
+      // }
+      // a:after {
+      //   background: none repeat scroll 0 0 transparent;
+      //   bottom: 0;
+      //   content: "";
+      //   display: block;
+      //   height: 2px;
+      //   left: 50%;
+      //   position: absolute;
+      //   background: LightCoral;
+      //   transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      //   width: 0;
+      // }
+      // a:hover:after {
+      //   width: 100%;
+      //   left: 0;
+      // }
     }
   }
 }

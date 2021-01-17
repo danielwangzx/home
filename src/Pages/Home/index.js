@@ -32,7 +32,7 @@ class Home extends React.Component {
                                 <i className='icon fab fa-instagram-square'></i>
                             </a>
                         </div>
-                        <div className='home-intro--message'><TypeMe backspaceDelay={850} onAnimationEnd={() => this.setState({ showNextPageArrow: true })} strings={[
+                        <div className='home-intro--message'><TypeMe backspaceDelay={850} cursorCharacter={null} onAnimationEnd={() => this.setState({ showNextPageArrow: true })} strings={[
                             <Delay ms={2000} />
                             , 'I build interactive user interface',
                             <Delete characters={32} />,
