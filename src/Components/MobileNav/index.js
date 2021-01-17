@@ -43,7 +43,7 @@ var styles = {
     bmItem: {
         display: 'block',
         color: 'antiquewhite',
-        'margin-bottom': '15px'
+        'marginBottom': '15px'
     },
     bmOverlay: {
         background: 'rgba(0, 0, 0, 0.3)'
@@ -53,9 +53,6 @@ var styles = {
 class MobileNav extends React.Component {
     showSettings(event) {
         event.preventDefault();
-    }
-    componentDidMount() {
-        console.log('helloworld')
     }
     render() {
         return (

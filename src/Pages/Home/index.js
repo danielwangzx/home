@@ -20,7 +20,6 @@ class Home extends React.Component {
             <>
                 <section className='section-container home'>
                     <div className='home-intro__container'>
-                        {/* <div className='home-intro__picture'></div> */}
                         <div>
                             <a className='home__social__icon' target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/weidong-li-leon/'>
                                 <i className='icon fab fa-linkedin'></i>
@@ -44,10 +43,8 @@ class Home extends React.Component {
                             'am a full stack developer.'
                         ]} /></div>
                     </div>
-                    {this.state.showNextPageArrow && <div className='next-page--arrow bounce'></div>}
+                    {/* {this.state.showNextPageArrow && <div className='next-page--arrow bounce'></div>} */}
                 </section>
-                <div className='page-container'>page2</div>
-                <div className='page-container'>page3</div>
             </>
         )
     }
