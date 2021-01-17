@@ -104,25 +104,26 @@ img {
   box-sizing: border-box;
   font-size: 16px;
 }
-// .g-confirm {
-//     padding-top: 10px;
-//     text-align: center;
-//   &__button {
-//     margin: 0 auto;
-//     height: 30px;
-//     width: 90px;
-//     text-align: center;
-//     background: #68c950;
-//     border-radius: 4px;
-//     color: #fff;
-//     font-weight: bold;
-//     font-size: 14px;
-//     transition: all 0.3s linear;
-//     cursor: pointer;
-//     text-decoration: none;
-//     &:hover {
-//       background: coral;
-//       color: #fff;
-//     }
-//   }
-// }
+.g-confirm {
+    padding-top: 10px;
+    text-align: center;
+  &__button {
+    margin: 0 auto;
+    height: 30px;
+    width: 90px;
+    text-align: center;
+    background: #68c950;
+    border-radius: 4px;
+    border: 1px greenyellow;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      background: coral;
+      color: #fff;
+    }
+  }
+}

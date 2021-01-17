@@ -20,7 +20,19 @@ class Home extends React.Component {
             <>
                 <section className='section-container home'>
                     <div className='home-intro__container'>
-                        <div className='home-intro__picture'></div>
+                        {/* <div className='home-intro__picture'></div> */}
+                        <div>
+                            <a className='home__social__icon' target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/weidong-li-leon/'>
+                                <i className='icon fab fa-linkedin'></i>
+                            </a>
+
+                            <a className='home__social__icon' target='_blank' rel='noopener noreferrer' href='https://github.com/leonlidawn'>
+                                <i className='icon fab fa-github-square'></i>
+                            </a>
+                            <a className='home__social__icon' target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/leonlidawn/'>
+                                <i className='icon fab fa-instagram-square'></i>
+                            </a>
+                        </div>
                         <div className='home-intro--message'><TypeMe backspaceDelay={850} onAnimationEnd={() => this.setState({ showNextPageArrow: true })} strings={[
                             <Delay ms={2000} />
                             , 'I build interactive user interface',

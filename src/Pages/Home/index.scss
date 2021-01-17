@@ -18,7 +18,7 @@
     background: url("../../images/backgrounds/home.jpeg");
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.8;
   }
   &::after{
     content:'';
@@ -33,9 +33,6 @@
 }
 
 @keyframes backgroundShow {
-  0% {
-    opacity: 1;
-  }
   100% {
     opacity: 0;
   }
