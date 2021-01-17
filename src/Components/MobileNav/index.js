@@ -59,7 +59,7 @@ class MobileNav extends React.Component {
             <Menu styles={styles} className={'mobile-nav__item'}>
                 <Link to="/home">Home</Link>
                 <Link to="/portfolio">Portfolio</Link>
-                {/* <Link to="/contact">About</Link> */}
+                <span onClick={this.props.showContactModal}>Contact</span>
             </Menu>
         );
     }
