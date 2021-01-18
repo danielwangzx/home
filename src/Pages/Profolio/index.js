@@ -3,7 +3,7 @@ import { invokePoints, setOnTargetPage } from '@/utils/pointsAnimation';
 import './index.scss';
 import projectDashboard from '../../images/backgrounds/projectdashboard.png';
 import projectKeystone from '@/images/backgrounds/projectkeystone.png';
-
+import projectPortfolio from '@/images/backgrounds/projectportfolio.png';
 
 const profolioProjects = [
     {
@@ -57,6 +57,7 @@ const profolioProjects = [
         bulletPoint: ['configured an react boiler plate from scratch can be used for futuer project','full responsive, demostrated various css tricks','star scatter effect, low performance cost, retained to desired page'],
         showCode: true,
         commercial: false,
+        profolioPic: projectPortfolio,
     }
 ];
 
