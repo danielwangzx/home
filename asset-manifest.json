@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.1660e2a5.chunk.css",
+    "main.css": "/static/css/main.d26a6005.chunk.css",
     "main.js": "/static/js/main.c004cab9.chunk.js",
     "main.js.map": "/static/js/main.c004cab9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2f85f2e8.js",
@@ -12,7 +12,7 @@
     "static/js/3.b47fee84.chunk.js.map": "/static/js/3.b47fee84.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.61547817.chunk.css.map": "/static/css/2.61547817.chunk.css.map",
-    "static/css/main.1660e2a5.chunk.css.map": "/static/css/main.1660e2a5.chunk.css.map",
+    "static/css/main.d26a6005.chunk.css.map": "/static/css/main.d26a6005.chunk.css.map",
     "static/js/2.aaed6e9a.chunk.js.LICENSE.txt": "/static/js/2.aaed6e9a.chunk.js.LICENSE.txt",
     "static/media/Hexagon.91cae4f3.svg": "/static/media/Hexagon.91cae4f3.svg",
     "static/media/blindfold.6413a89d.png": "/static/media/blindfold.6413a89d.png",
@@ -28,7 +28,7 @@
     "static/js/runtime-main.2f85f2e8.js",
     "static/css/2.61547817.chunk.css",
     "static/js/2.aaed6e9a.chunk.js",
-    "static/css/main.1660e2a5.chunk.css",
+    "static/css/main.d26a6005.chunk.css",
     "static/js/main.c004cab9.chunk.js"
   ]
 }
