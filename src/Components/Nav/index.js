@@ -33,7 +33,7 @@ class NavBar extends Component {
     const { history } = this.props;
     return (
       <header>
-        <nav className={`nav-bar ${(this.state.sticky || pathname !== "/home") ? 'sticky' : ''}`} >
+        <nav className={`nav-bar ${(this.state.sticky || !pathname.includes("/home")) ? 'sticky' : ''}`} >
           <div className="nav-bar__container--web">
             <ul>
               <li><a className='nav-bar__container--link' href onClick={() => history.push('/home')}>Home</a></li>
