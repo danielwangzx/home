@@ -97,6 +97,8 @@
 }
 
 .card__side--back {
+  display: flex;
+  flex-direction: column;
   transform: rotateY(180deg);
 }
 .card__side--back-0 {
@@ -158,18 +160,57 @@
     height: 100%;
     object-fit: contain;
   }
+  &--backheading {
+    border-bottom: 3px solid whitesmoke;
+    text-align: center;
+    order:1;
+  }
+  &--backtext {
+    padding-left: 0;
+    order:2;
+    @media screen and (max-width:660px){
+      order:4;
+    }
+  }
+  &--backbutton {
+    order:3;
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+    border: solid white 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+    margin: 10px auto;
+    a {
+      color: white;
+    }
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+  &--bulletpoint {
+    font-size: 15px;
+    text-align: left;
+    padding: 6px;
+  }
+  i {
+    font-size: 15px;
+  }
 }
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
   -webkit-perspective: 150rem;
   position: relative;
+  overflow-y: hidden;
   @media screen and (min-width: 661px) {
     height: 350px;
   }
   @media screen and (max-width: 660px) {
     height: 200px;
-    overflow-y: hidden;
     margin-bottom: 20px;
   }
   border-radius: 2px;
