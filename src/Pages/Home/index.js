@@ -55,7 +55,8 @@ class Home extends React.Component {
                     </div>
                     {this.state.showNextPageArrow && <div className='next-page--arrow bounce'></div>}
                 </section>
-                <section></section>
+                <section className='section-container skill-card'>
+                </section>
             </>
         )
     }

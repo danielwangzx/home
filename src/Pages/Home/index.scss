@@ -4,6 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  &.skill-card{
+    height: 500px;
+    background-color: aliceblue;
+  }
 }
 
 .home {
@@ -21,8 +25,8 @@
     background: url("../../images/backgrounds/home.jpeg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
   }
   &::after {
     content: "";
