@@ -12,10 +12,8 @@ class NavBar extends Component {
     };
   }
   scrollListener = () => {
-    console.log('world')
     if (window.pageYOffset > 0) {
       this.setState({ sticky: true });
-      console.log('hello')
     } else {
       this.setState({ sticky: false });
     }

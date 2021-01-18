@@ -11,11 +11,11 @@ class Home extends React.Component {
         }
     }
     componentDidMount() {
-        window.addEventListener("scroll", this.scrollListener);
+        window.addEventListener("scroll", this.scrollListener,true);
     }
 
     componentWillUnmount() {
-        window.removeEventListener("scroll", this.scrollListener)
+        window.removeEventListener("scroll", this.scrollListener,true)
     }
     render() {
         return (
@@ -53,10 +53,10 @@ class Home extends React.Component {
                             <i className='fab fa-github-square'></i>
                         </a>
                     </div>
-                    {this.state.showNextPageArrow && <div className='next-page--arrow bounce'></div>}
+                    {/* {this.state.showNextPageArrow && <div className='next-page--arrow bounce'></div>} */}
                 </section>
-                <section className='section-container skill-card'>
-                </section>
+                {/* <section className='section-container skill-card'>
+                </section> */}
             </>
         )
     }

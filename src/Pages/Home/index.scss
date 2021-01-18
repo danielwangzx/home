@@ -9,7 +9,6 @@
     background-color: aliceblue;
   }
 }
-
 .home {
   display: flex;
   flex-direction: column;
@@ -25,8 +24,6 @@
     background: url("../../images/backgrounds/home.jpeg");
     background-size: cover;
     background-position: center;
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
   }
   &::after {
     content: "";
