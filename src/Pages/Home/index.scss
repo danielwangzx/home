@@ -10,9 +10,6 @@
   }
 }
 .home {
-  *{
-    overflow: hidden;
-  }
   display: flex;
   flex-direction: column;
   padding: 30px 30px;
@@ -89,6 +86,7 @@
       color:whitesmoke;
       font-size: 15px;
       cursor: pointer;
+      overflow: hidden;
       i{
         font-size: 12px;
         margin-right: 2px
@@ -158,6 +156,7 @@
 
 
 .home_social {
+  overflow: hidden;
   i {
     font-size: 28px;
     margin: 5px 5px;

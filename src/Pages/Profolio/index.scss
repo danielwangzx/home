@@ -57,9 +57,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding: 2rem;
-    border: 10px solid;
+    border: 5px solid;
     border-image-slice: 1;
-    border-width: 5px;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3px);
     &:nth-child(odd) {
