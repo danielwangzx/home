@@ -1,5 +1,6 @@
 var BACKGROUND_COLOR = "rgba(0,0,0,0)";   // 背景色
-var POINT_COLOR = "rgba(231,202,127,0.7)";  // 点的颜色
+// var POINT_COLOR = "rgba(231,202,127,0.7)";  // 点的颜色
+var POINT_COLOR = "rgba(255,45,81,0.5)";  // 点的颜色
 var LINE_LENGTH = 10000;                    // 点之间连线长度(的平方)
 
 // 创建背景画布

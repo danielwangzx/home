@@ -39,7 +39,7 @@ const profolioProjects = [
             'Tooling': 'Git, NPM, Bitbucket, JIRA, Postman, Swagger-doc, webpack',
             'Methodologies': 'Agile/Scrum CI/CD',
         },
-        bulletPoint: ['increased homepage google lighthouse score by 25','redesigned database schema and upload process of video, leanrning material','crafted UI component based on design providing feedback','created and modifed various utitles function and stood the test of peer developers','intensive backend nodejs keystonejs development'],
+        bulletPoint: ['improved homepage lighthouse score by 25','redesigned database schema and upload process of video, leanrning material','crafted UI component based on design providing feedback','created and modifed various utitles function and stood the test of peer developers','intensive backend nodejs keystonejs development'],
         profolioPic: projectKeystone,
         showCode: false,
         commercial: true,
@@ -47,7 +47,7 @@ const profolioProjects = [
     {
         Name: "Handy App",
         Year: '2020',
-        Description: 'a convinient online web app for weather look up',
+        Description: 'a convinient online web app for looking up local tradies, house services and trading second hand goods',
         Role: 'Fullstack developer',
         Link: 'https://jiangren.com.au/',
         'Tech-stack': {
@@ -73,7 +73,7 @@ const profolioProjects = [
             'Tooling': 'Git, NPM, Github, Github-page, webpack',
             'Methodologies': 'CI/CD',
         },
-        bulletPoint:['implemented latest react hooks features', `prefetch with users's default location and shows up to 7 days of following result`,'dynamic background matching search result',''],
+        bulletPoint:['implemented latest react hooks features', `prefetch with users's default location and shows up to 7 days of following result`,'dynamic background matching search result'],
         showCode: true,
         commercial: false,
         profolioPic: projectWeather,
