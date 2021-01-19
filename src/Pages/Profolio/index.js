@@ -4,6 +4,8 @@ import './index.scss';
 import projectDashboard from '../../images/backgrounds/projectdashboard.png';
 import projectKeystone from '@/images/backgrounds/projectkeystone.png';
 import projectPortfolio from '@/images/backgrounds/projectportfolio.png';
+import projectHandy from '@/images/backgrounds/projecthandy.png';
+import projectWeather from '@/images/backgrounds/projectweatherapp.jpg';
 
 const profolioProjects = [
     {
@@ -43,11 +45,45 @@ const profolioProjects = [
         commercial: true,
     },
     {
-        Name: "Daniel Wang's Blog",
+        Name: "Handy App",
         Year: '2020',
-        Description: 'a place for me to showcase projects, getting to know new friends',
-        Role: 'Full Stack developer',
+        Description: 'a convinient online web app for weather look up',
+        Role: 'Fullstack developer',
         Link: 'https://jiangren.com.au/',
+        'Tech-stack': {
+            'FrontEnd': 'React, Html, Scss, Javascript, React-Redux, Axios,',
+            'BackEnd': 'Nodejs, Koa, Mongodb, JWT',
+            'Tooling': 'Git, NPM, Github, Github-page, webpack',
+            'Methodologies': 'Agile/Scrum CI/CD',
+        },
+        bulletPoint: ['configured an react boiler plate from scratch can be used for futuer project','full responsive, demostrated various css tricks','star scatter effect, low performance cost, retained to desired page'],
+        showCode: true,
+        commercial: false,
+        profolioPic: projectHandy,
+    },
+    {
+        Name: "Weather App",
+        Year: '2019',
+        Description: 'a convinient online web app for weather look up',
+        Role: 'Frontend developer',
+        Link: 'https://jiangren.com.au/',
+        'Tech-stack': {
+            'FrontEnd': 'React, React-hooks, Html, Scss, Javascript,',
+            'BackEnd': 'Openweatherapi',
+            'Tooling': 'Git, NPM, Github, Github-page, webpack',
+            'Methodologies': 'CI/CD',
+        },
+        bulletPoint: ['configured an react boiler plate from scratch can be used for futuer project','full responsive, demostrated various css tricks','star scatter effect, low performance cost, retained to desired page'],
+        showCode: true,
+        commercial: false,
+        profolioPic: projectWeather,
+    },
+    {
+        Name: "Daniel Wang's Blog",
+        Year: '2021',
+        Description: 'a place for me to showcase projects, getting to know new friends',
+        Role: 'Frontend developer',
+        Link: 'https://danielwangzx.github.io/home/',
         'Tech-stack': {
             'FrontEnd': 'React, Html, Scss, Javascript, React-router, Redux-saga, Antd',
             'BackEnd': 'Emailjs',
@@ -58,7 +94,7 @@ const profolioProjects = [
         showCode: true,
         commercial: false,
         profolioPic: projectPortfolio,
-    }
+    },  
 ];
 
 export default class Profolio extends Component {

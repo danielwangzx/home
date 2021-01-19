@@ -19,10 +19,10 @@ class NavBar extends Component {
     }
   }
   componentDidMount() {
-    window.addEventListener("scroll", this.scrollListener);
+    window.addEventListener("scroll", this.scrollListener,true);
   }
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollListener);
+    window.removeEventListener('scroll', this.scrollListener,true);
   }
 
   showContactModal = () => {
