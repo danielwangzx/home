@@ -15,13 +15,13 @@ const profolioProjects = [
         Role: 'Full Stack developer',
         Link: 'https://learn.jiangren.com.au/user/login',
         'Tech-stack': {
-            'Front-end': 'HTML5, CSS3, Less, JavaScript(ES6 +), React, React-Router, Redux, Redux-saga, UmiJs, DvaJs, Ant Design, Zeplin',
+            'Front-end': 'HTML5, CSS3, Less, BEM, JavaScript(ES6 +), React, React-Router, Redux, Redux-saga, UmiJs, DvaJs, Ant Design, Zeplin',
             'Back-end': 'Node.js, KeystoneJs(express), Restful API, MongoDB',
-            'Cloud': 'Elastic Cache, Alicloud-video, serverless, aws-s3',
+            'Cloud': 'Elastic Cache, Alicloud-video, Serverless, aws-s3',
             'Tooling': 'Git, NPM, Bitbucket, JIRA, Postman, Swagger-doc, Umi-config(webpack)',
             'Methodologies': 'Agile/Scrum CI/CD',
         },
-        bulletPoint: ['Successfully upgraded project framework to umi3','Provided tech orientation for new dev recruits','Modified video playback system for custimsed function','Implemented course management interactions','Optimised webpack setting for smaller bundle better speed'],
+        bulletPoint: ['Successfully upgraded project framework to umi3','Provided tech orientation for new dev recruits','Modified video playback system for custimsed function','Implemented course management, purchasing interactions','Optimised webpack setting for smaller bundle better speed','code reuse for different scenario, impletened role control'],
         profolioPic: projectDashboard,
         showCode: false,
         commercial: true,
@@ -29,13 +29,13 @@ const profolioProjects = [
     {
         Name: 'JR Academy Official Website',
         Year: '2020',
-        Description: 'Official website of JR academy for business showcasing, content delivered via serverside rendering, also comes with the backend server hosting for learning portal and official website',
+        Description: 'Official website of JR academy for business showcasing, contentiful bloging delivered via serverside rendering, also comes with the backend server hosting for learning portal and official website',
         Role: 'Full Stack developer',
         Link: 'https://jiangren.com.au/',
         'Tech-stack': {
-            'FrontEnd': 'Pug, Sass, JavaScript(ES6 +), Jquery, React(SSR), React-Hooks Zeplin',
+            'FrontEnd': 'Pug, Sass, BEM, JavaScript(ES6 +), Jquery, React(SSR), React-Hooks, Zeplin',
             'BackEnd': 'Node.js, KeystoneJs(express), Restful API, JWT, Nodemailer, Morgan, MongoDB',
-            'Cloud': 'Elastic Cache, Alicloud-video, serverless, aws-s3',
+            'Cloud': 'Elastic Cache, Alicloud-video, Serverless, aws-s3',
             'Tooling': 'Git, NPM, Bitbucket, JIRA, Postman, Swagger-doc, webpack',
             'Methodologies': 'Agile/Scrum CI/CD',
         },
@@ -51,12 +51,12 @@ const profolioProjects = [
         Role: 'Fullstack developer',
         Link: 'https://jiangren.com.au/',
         'Tech-stack': {
-            'FrontEnd': 'React, Html, Scss, Javascript, React-Redux, Axios,',
+            'FrontEnd': 'React, Html, Scss, Javascript, React-Redux, Redux-saga, Redux-thunk, Axios, Lodash, React-Router',
             'BackEnd': 'Nodejs, Koa, Mongodb, JWT',
             'Tooling': 'Git, NPM, Github, Github-page, webpack',
             'Methodologies': 'Agile/Scrum CI/CD',
         },
-        bulletPoint: ['configured an react boiler plate from scratch can be used for futuer project','full responsive, demostrated various css tricks','star scatter effect, low performance cost, retained to desired page'],
+        bulletPoint:['fast prototyping recreated UI with pixel accurate precisioncy','Worked in a team of 5 as personal project and exercised Agile/Scrum','authorised private route with role control'],
         showCode: true,
         commercial: false,
         profolioPic: projectHandy,
@@ -64,16 +64,16 @@ const profolioProjects = [
     {
         Name: "Weather App",
         Year: '2019',
-        Description: 'a convinient online web app for weather look up',
+        Description: 'a convinient online web app for weather look up, used to learn new feature after react-hooks was introduced',
         Role: 'Frontend developer',
-        Link: 'https://jiangren.com.au/',
+        Link: 'https://github.com/danielwangzx/weather-app',
         'Tech-stack': {
             'FrontEnd': 'React, React-hooks, Html, Scss, Javascript,',
             'BackEnd': 'Openweatherapi',
             'Tooling': 'Git, NPM, Github, Github-page, webpack',
             'Methodologies': 'CI/CD',
         },
-        bulletPoint: ['configured an react boiler plate from scratch can be used for futuer project','full responsive, demostrated various css tricks','star scatter effect, low performance cost, retained to desired page'],
+        bulletPoint:['implemented latest react hooks features', `prefetch with users's default location and shows up to 7 days of following result`,'dynamic background matching search result',''],
         showCode: true,
         commercial: false,
         profolioPic: projectWeather,
@@ -117,7 +117,7 @@ export default class Profolio extends Component {
                                     <div className='card__side card__side--front'>
                                         <img src={project.profolioPic} alt={project.Name} />
                                     </div>
-                                    <div className={`card__side card__side--back card__side--back-${index}`}>
+                                    <div className={`card__side card__side--back card__side--back-${index%6}`}>
                                         <div className='card__side--backheading'>{project.commercial ? 'Commercial' : 'Personal'}</div>
                                         <ul className='card__side--backtext'>
                                             {project.bulletPoint.map((elem,index)=>{
