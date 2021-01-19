@@ -49,7 +49,7 @@ const profolioProjects = [
         Year: '2020',
         Description: 'a convinient online web app for looking up local tradies, house services and trading second hand goods',
         Role: 'Fullstack developer',
-        Link: 'https://jiangren.com.au/',
+        Link: 'https://github.com/danielwangzx/handy-frontend',
         'Tech-stack': {
             'FrontEnd': 'React, Html, Scss, Javascript, React-Redux, Redux-saga, Redux-thunk, Axios, Lodash, React-Router',
             'BackEnd': 'Nodejs, Koa, Mongodb, JWT',
