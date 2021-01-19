@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &.skill-card{
+  &.skill-card {
     height: 500px;
     background-color: aliceblue;
   }
@@ -53,13 +53,16 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 10px 10px;
-    animation: trainsitMaxHeight 0.85s ease-in-out forwards;  
+    animation: trainsitMaxHeight 0.85s ease-in-out forwards;
     -webkit-animation-delay: 0.7s;
     animation-delay: 0.2;
-    max-height: 140px;  
+    max-height: 140px;
     border-bottom: wheat 1px solid;
     border-top: wheat 1px solid;
-   
+    * {
+      overflow: hidden;
+    }
+
     span {
       color: #dead21;
       font-size: 170%;
@@ -70,26 +73,26 @@
     }
   }
   &--message {
-    &__greeting{
+    &__greeting {
       color: #dead21;
-      font-size:180%
+      font-size: 180%;
     }
     &__name {
-      color:azure;
-      font-size:160%;
+      color: azure;
+      font-size: 160%;
       font-weight: 800;
     }
-    &__contact{
+    &__contact {
       text-align: center;
     }
-    &--info{
-      color:whitesmoke;
+    &--info {
+      color: whitesmoke;
       font-size: 15px;
       cursor: pointer;
       overflow: hidden;
-      i{
+      i {
         font-size: 12px;
-        margin-right: 2px
+        margin-right: 2px;
       }
     }
   }
@@ -141,27 +144,27 @@
 @media (max-width: 660px) {
   @keyframes trainsitMaxHeight {
     100% {
-      max-height:320px;
+      max-height: 320px;
     }
   }
 }
-@media(min-width:661px){
+@media (min-width: 661px) {
   @keyframes trainsitMaxHeight {
     100% {
-      max-height:250px;
+      max-height: 250px;
     }
   }
 }
 
-
-
 .home_social {
-  overflow: hidden;
+  * {
+    overflow: hidden;
+  }
   i {
     font-size: 28px;
     margin: 5px 5px;
-    &:hover{
-          background-color: white;
+    &:hover {
+      background-color: white;
     }
     &.fa-github-square {
       color: #333;
@@ -171,7 +174,8 @@
     }
   }
 }
-#mobile,#email {
+#mobile,
+#email {
   display: inline;
   margin-left: 2px;
 }
