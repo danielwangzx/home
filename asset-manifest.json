@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/home/static/css/main.d6cc942a.chunk.css",
-    "main.js": "/home/static/js/main.963cc7e2.chunk.js",
-    "main.js.map": "/home/static/js/main.963cc7e2.chunk.js.map",
+    "main.js": "/home/static/js/main.a59fdcb6.chunk.js",
+    "main.js.map": "/home/static/js/main.a59fdcb6.chunk.js.map",
     "runtime-main.js": "/home/static/js/runtime-main.3199a281.js",
     "runtime-main.js.map": "/home/static/js/runtime-main.3199a281.js.map",
     "static/css/2.595c9efd.chunk.css": "/home/static/css/2.595c9efd.chunk.css",
@@ -14,6 +14,7 @@
     "static/css/2.595c9efd.chunk.css.map": "/home/static/css/2.595c9efd.chunk.css.map",
     "static/css/main.d6cc942a.chunk.css.map": "/home/static/css/main.d6cc942a.chunk.css.map",
     "static/js/2.aaed6e9a.chunk.js.LICENSE.txt": "/home/static/js/2.aaed6e9a.chunk.js.LICENSE.txt",
+    "static/media/DanielWang_CV.9be78bbf.pdf": "/home/static/media/DanielWang_CV.9be78bbf.pdf",
     "static/media/Hexagon.91cae4f3.svg": "/home/static/media/Hexagon.91cae4f3.svg",
     "static/media/blindfold.6413a89d.png": "/home/static/media/blindfold.6413a89d.png",
     "static/media/all.min.css": "/home/static/media/fa-solid-900.46fdbd2d.woff",
@@ -31,6 +32,6 @@
     "static/css/2.595c9efd.chunk.css",
     "static/js/2.aaed6e9a.chunk.js",
     "static/css/main.d6cc942a.chunk.css",
-    "static/js/main.963cc7e2.chunk.js"
+    "static/js/main.a59fdcb6.chunk.js"
   ]
 }
