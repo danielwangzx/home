@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import "./index.scss";
 import MobileNav from '@/Components/MobileNav';
 import Contact from '@/Components/Contact';
+import resume from '../../DanielWang_CV.pdf';
 class NavBar extends Component {
   constructor() {
     super();
@@ -19,10 +20,10 @@ class NavBar extends Component {
     }
   }
   componentDidMount() {
-    window.addEventListener("scroll", this.scrollListener,true);
+    window.addEventListener("scroll", this.scrollListener, true);
   }
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollListener,true);
+    window.removeEventListener('scroll', this.scrollListener, true);
   }
 
   showContactModal = () => {
@@ -38,7 +39,9 @@ class NavBar extends Component {
             <ul>
               <li><a className='nav-bar__container--link' href onClick={() => history.push('/home')}>Home</a></li>
               <li><a className='nav-bar__container--link' href onClick={() => history.push('/portfolio')}>Portfolio</a></li>
-              <li><a className='nav-bar__container--link' href="#">Resume</a></li>
+              <li><a href={resume} className='nav-bar__container--link'
+                target="_blank" rel='noopener noreferrer'
+              >Resume</a></li>
               <li><a className='nav-bar__container--link' href onClick={this.showContactModal}>Contact</a></li>
             </ul>
           </div>
