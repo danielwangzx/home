@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import "./index.scss";
 import MobileNav from '@/Components/MobileNav';
 import Contact from '@/Components/Contact';
-import resume from '../../DanielWang_CV.pdf';
+import resume from '../../DanielWang_Resume.pdf';
 class NavBar extends Component {
   constructor() {
     super();
