@@ -7,8 +7,9 @@ import {
 } from '@/utils/request';
 import {flickerFeed} from '@/constants/actionConstants';
 
-function* getImgFeed(action) {
-    const response = yield call(flickr, action);
+function* getImgFeed({payload}) {
+    const response = yield call(flickr, payload);
+    console.log(response)
      yield put({
         type: flickerFeed.LIST_IMG,
         payload: response
@@ -16,7 +17,7 @@ function* getImgFeed(action) {
 
 }
 function* watchImgFeedSaga() {
-    yield takeEvery('fetchImgFeed', getImgFeed)
+    yield takeEvery(flickerFeed.FETCH_IMG, getImgFeed);
 }
 
 export const imgFeedSaga = [fork(watchImgFeedSaga)]

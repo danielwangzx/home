@@ -6,7 +6,7 @@ import {
 const fakeapi = (action) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve('xiaoming')
+            resolve(action.payload)
         }, 500)
     })
 }
