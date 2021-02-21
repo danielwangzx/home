@@ -21,7 +21,6 @@ const cache = new LRU({
 serverRouter.get('/api/pictures/:tag', async ctx => {
     const { tag } = ctx.params;
     if (cache.peek(tag)) {
-        console.log('cache', cache.get(tag))
         ctx.body = cache.get(tag);
         console.log(`fetch picture feed for ${tag} from local cache`)
         return
@@ -51,7 +50,6 @@ serverRouter.get('/',async ctx=>{
 
 const app = new Koa()
 app.use(cors());
-//hello
 app.use(serverRouter.routes())
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {

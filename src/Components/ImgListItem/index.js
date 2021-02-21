@@ -18,10 +18,13 @@ class ImgListItem extends React.Component {
 
     handleAddToFavorite = (title, elem) => {
         this.setState({ addedToFavorite: true }, () => {
-            const { addFav, imgFeed: { favList } } = this.props;
+            const { addFav } = this.props;
             message.success(`${title} added to favourite!`, 1);
             addFav(elem);
-            setTimeout(() => { localStorage.setItem('favList', JSON.stringify(favList)) }, 100)
+            setTimeout(() => {
+                const { imgFeed: { favList } } = this.props;
+                localStorage.setItem('favList', JSON.stringify(favList))
+            }, 100)
         })
     }
 
@@ -37,9 +40,9 @@ class ImgListItem extends React.Component {
                         <div className='img-item--icon' onClick={() => setModalImgSource(elem.media.m)}><PlusCircleTwoTone style={{ fontSize: '40px' }} /></div>
                         <div className='img-item--static'>{elem.title}</div>
                         <div className='img-item--static'> <Avatar icon={<UserOutlined />} /><span>{elem.author}</span></div>
-                        <div className='img-item--static'>{tagArr.length > 0 && tagArr.map((elem,index) => {
+                        <div className='img-item--static'>{tagArr.length > 0 && tagArr.map((elem, index) => {
                             if (index < 3) {
-                                return (<span className='img-item--tag' key={index}>{elem.substring(0,6)}</span>)
+                                return (<span className='img-item--tag' key={index}>{elem.substring(0, 6)}</span>)
                             } else {
                                 return null;
                             }
