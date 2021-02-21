@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { userLoginSaga } from '@/actions/user';
-import { fetchImg } from '@/actions/imgFeed';
+import { fetchImg, listFav, setModalImgSource } from '@/actions/imgFeed';
 import { debounce } from '@/utils';
 import { message } from 'antd';
 import './index.scss';
@@ -10,10 +10,14 @@ import SectionContainer from '@/Components/SectionContainer';
 import ImgListItem from '@/Components/ImgListItem';
 import PictureModal from '@/Components/PictureModal';
 
-@connect(({ user, imgFeed }) => ({ user, imgFeed }), { userLoginSaga, fetchImg })
+@connect(({ user, imgFeed }) => ({ user, imgFeed }), { userLoginSaga, fetchImg, listFav })
 class Home extends React.Component {
-    state = {
-        showPictureModal: false
+    componentDidMount() {
+        const { listFav } = this.props;
+        const favList = localStorage.getItem('favList');
+        if (favList) {
+            listFav(JSON.parse(favList))
+        }
     }
     handleSubmit = (e) => {
         const { value } = e.target;
@@ -39,10 +43,10 @@ class Home extends React.Component {
         }
     }
     renderImgs = (arr, category) => arr.map((elem, index) => <ImgListItem elem={elem} index={index} category={category} />)
+
     render() {
         console.log(this.props.imgFeed)
-        const { imgList, ModalImgResource } = this.props.imgFeed;
-        const { showPictureModal } = this.state;
+        const { imgList, modalImgSource, favList } = this.props.imgFeed;
         return (
             <>
                 <Header />
@@ -51,13 +55,13 @@ class Home extends React.Component {
                     <div className='home-page__sub-heading'>Search for flicker picktures, result updates as you type</div>
                     <input type="search" placeholder=" cat" onChange={this.handleDebouncedChange} onKeyDown={this.handleKeyDown} />
                     <SectionContainer category='favourite'>
-                        {this.renderImgs(imgList, 'favourite')}
+                        {this.renderImgs(favList, 'favourite')}
                     </SectionContainer>
                     <SectionContainer category='results'>
                         {this.renderImgs(imgList, 'results')}
                     </SectionContainer>
                 </div>
-                {showPictureModal && <PictureModal resouce={ModalImgResource} />}
+                {modalImgSource&& <PictureModal resouce={modalImgSource} />}
             </>
         )
     }

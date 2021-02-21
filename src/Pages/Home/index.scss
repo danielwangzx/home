@@ -120,6 +120,9 @@ $hightlight-orange: #dda51e;
       -webkit-animation: slideInBottom 0.8s ease;
       animation: slideInBottom 0.8s ease;
     }
+    &:hover .img-item--author{
+      animation: emerge 0.8s ease;
+    }
   }
   &--pic {
     height: 100%;
@@ -160,8 +163,29 @@ $hightlight-orange: #dda51e;
     text-decoration: none;
     color: #ffffff;
   }
+  &--tag{
+    border-radius: 25%;
+    border: solid 2px #dda51e;
+    padding: 2px;
+    color: #dda51e;
+  }
+  &--author{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: larger;
+    span {
+      margin-left: 8px;
+    }
+  }
 }
-
+@keyframes emerge {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes slideInTop {
   0% {
     transform: translateY(-20px);
