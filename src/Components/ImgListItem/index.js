@@ -8,7 +8,6 @@ export default class ImgListItem extends React.Component {
         e.target.src="image_path_here"
     }
 
-
     render() {
         return (
             <div className="img-list__item__wrapper" data-id="website">

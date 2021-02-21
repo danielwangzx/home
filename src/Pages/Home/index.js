@@ -1,42 +1,47 @@
 import React from 'react';
-import logo from '../../logo.svg';
 import { connect } from 'react-redux';
 import { userLoginSaga } from '@/actions/user';
 import { fetchImg } from '@/actions/imgFeed';
 import { debounce } from '@/utils';
+import { message } from 'antd';
+import './index.scss';
+import Header from '@/Components/header'
 
 @connect(({ user, imgFeed }) => ({ user, imgFeed }), { userLoginSaga, fetchImg })
 class Home extends React.Component {
-    componentDidMount() {
-        const { fetchImg } = this.props
-        fetchImg('cat')
+    handleSubmit = (e) => {
+        const { value } = e.target;
+        const { fetchImg } = this.props;
+        if (value !== '') {
+            const regex = /[\w]+/g;
+            const tags = value.match(regex).join(',');
+            if (tags !== null) {
+                console.log('you attemped to get feed with following tags:', tags)
+                fetchImg(tags)
+            } else {
+                message.info('flicker takes meaningfull word as input can be seperated by comma or blankspace', 1)
+            }
+        }
     }
-    debouncedCall = debounce((e)=>{
-        console.log(e.target)
-    },666,false)
+    handleDebouncedChange = debounce((e) => {
+        this.handleSubmit(e);
+    }, 333, false)
+
+    handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            this.handleSubmit(e)
+        }
+    }
     render() {
-        const { userLoginSaga, imgFeed } = this.props;
-        console.log(this.props)
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-        </p>
-                    <div>{JSON.stringify(imgFeed)}</div>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        haha
-        </a>
-                    <button onClick={() => userLoginSaga(12)}>click</button>
-                    <button onClick={this.debouncedCall}>click</button>
-                </header>
-            </div>
+            <>
+                <Header />
+                <div className='home-page__container'>
+                    <h4 className='home-page__heading' id='home'>flicker <span>feed</span></h4>
+                    <div className='home-page__sub-heading'>Search for flicker picktures, result updates as you type</div>
+                    <input type="search" placeholder=" cat" onChange={this.handleDebouncedChange} onKeyDown={this.handleKeyDown} />
+                </div>
+            </>
         )
     }
 }

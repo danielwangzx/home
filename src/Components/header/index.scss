@@ -1,0 +1,158 @@
+/*Header*/
+@keyframes nav {
+    from {
+      opacity: 0;
+      transform: translateX(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  & .stretchy-nav {
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    z-index: 10;
+  }
+}
+header .stretchy-nav .stretchy-nav-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #333333;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+@media only screen and (max-width: 480px) {
+  header .stretchy-nav .stretchy-nav-background {
+    opacity: 0.6;
+  }
+}
+header .stretchy-nav .nav-trigger {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 12;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+header .stretchy-nav .nav-trigger span {
+  height: 2px;
+  width: 16px;
+  background-color: #ffffff;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+header .stretchy-nav .nav-trigger span::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 16px;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  transform: translateY(-6px);
+  transition: all 0.3s ease;
+}
+header .stretchy-nav .nav-trigger span::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 16px;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  transform: translateY(6px);
+  transition: all 0.3s ease;
+}
+header .stretchy-nav ul {
+  visibility: hidden;
+}
+header .nav-is-visible .stretchy-nav-background {
+  height: 100%;
+}
+header .nav-is-visible .nav-trigger span::before {
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+header .nav-is-visible .nav-trigger span::after {
+  transform: rotate(-45deg);
+  transition: all 0.3s ease;
+}
+header .nav-is-visible .nav-trigger span {
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+header .nav-is-visible ul {
+  visibility: visible;
+  list-style: none;
+  margin: 0;
+  padding: 50px 0 20px;
+  position: relative;
+  z-index: 11;
+}
+header .nav-is-visible ul li {
+  display: block;
+}
+header .nav-is-visible ul li a {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 50px;
+  height: 50px;
+  animation: nav 0.3s ease forwards;
+  opacity: 0;
+  display: block;
+}
+header .nav-is-visible ul li a span.fa {
+  width: 60px;
+  text-align: center;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+header .nav-is-visible ul li a.active {
+  color: #dda51e;
+}
+header .nav-is-visible ul li a.active span.fa {
+  border-right: 3px solid;
+}
+@media only screen and (max-width: 480px) {
+  header .nav-is-visible ul li span.nav-list-title {
+    display: none;
+  }
+}
+header .nav-is-visible ul li a:hover {
+  color: #dda51e;
+}
+header .nav-is-visible ul li a:hover span {
+  margin-right: 15px;
+}
+header .nav-is-visible ul li:nth-child(2) a {
+  animation-delay: 0.1s;
+}
+header .nav-is-visible ul li:nth-child(3) a {
+  animation-delay: 0.2s;
+}
+header .nav-is-visible ul li:nth-child(4) a {
+  animation-delay: 0.3s;
+}
+header .nav-is-visible ul li:nth-child(5) a {
+  animation-delay: 0.4s;
+}

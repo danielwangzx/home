@@ -1,0 +1,98 @@
+$hightlight-orange: #dda51e;
+@mixin staple-shape {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 20px;
+  background-color: $hightlight-orange;
+  height: 1.5px;
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
+}
+.home-page {
+  &__sub-heading {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.8;
+    margin: 0 0 22px;
+    display: inline-block;
+    position: relative;
+    color: whitesmoke;
+    &::after {
+      right: -40px;
+      @include staple-shape();
+    }
+    &::before {
+      left: -40px;
+      @include staple-shape();
+    }
+  }
+  &__heading {
+    font-weight: 900;
+    font-size: 42px;
+    font-family: "Poppins", sans-serif;
+    margin: 0 0 15px;
+    color: whitesmoke;
+    text-transform: capitalize;
+    span {
+      color: $hightlight-orange;
+    }
+  }
+  &__container {
+    background-color: #111111;
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    input {
+      outline: none;
+    }
+    input[type="search"] {
+      -webkit-appearance: textfield;
+      -webkit-box-sizing: content-box;
+      font-family: inherit;
+      font-size: 100%;
+    }
+    input::-webkit-search-decoration,
+    input::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    input[type="search"] {
+      background: #ededed
+        url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png)
+        no-repeat 0.5625em center;
+      border: solid 0.0625em #ccc;
+      padding: 0.5625em 0.625em 0.5625em 2em;
+      width: 5.5em;
+
+      -webkit-border-radius: 10em;
+      -moz-border-radius: 10em;
+      border-radius: 10em;
+
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+    input[type="search"]:focus {
+      width: 9em;
+      background-color: #fff;
+      border-color: #66cc75;
+      -webkit-box-shadow: 0 0 0.3125em rgba(109, 207, 246, 0.5);
+      -moz-box-shadow: 0 0 0.3125em rgba(109, 207, 246, 0.5);
+      box-shadow: 0 0 0.3125em rgba(109, 207, 246, 0.5);
+    }
+
+    input:-moz-placeholder {
+      color: #999;
+    }
+    input::-webkit-input-placeholder {
+      color: #999;
+    }
+  }
+}

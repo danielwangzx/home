@@ -1,3 +1,4 @@
+// a promise based implementation of debounce to reduce serverload
 export function debounce(method, wait, immediate) {
     let timeout
     let result

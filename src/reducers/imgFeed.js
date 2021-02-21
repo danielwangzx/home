@@ -3,7 +3,6 @@ const initialState = {
     imgList:[]
 }
 const imgFeed = (state=initialState, { type, payload }) => {
-    console.log('hi',type,payload,state)
     switch (type) {
         case flickerFeed.LIST_IMG:
             return {
