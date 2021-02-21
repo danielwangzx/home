@@ -1,9 +1,10 @@
 import React from 'react';
 import './index.scss';
 import { message, Avatar } from 'antd';
-import { HeartTwoTone, UserOutlined } from '@ant-design/icons';
+import { HeartTwoTone, UserOutlined, FieldTimeOutlined, PlusCircleTwoTone, Html5TwoTone } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { addFav, setModalImgSource } from '@/actions/imgFeed';
+import moment from 'moment';
 
 @connect(({ imgFeed }) => ({ imgFeed }), { addFav, setModalImgSource })
 class ImgListItem extends React.Component {
@@ -34,15 +35,21 @@ class ImgListItem extends React.Component {
             <li className='img-item__wrapper' key={index}>
                 <div className='img-item__container'>
                     <div className='img-item--overlay'>
-                        <div className='img-item--icon' onClick={() => setModalImgSource(elem.media.m)}>hello</div>
-                        <div className='img-item--author'> <Avatar icon={<UserOutlined />} /><span>{elem.author}</span></div>
-                        <div className='img-item--author'>{ tagArr.length > 0 && tagArr.map(elem=>(<span className='img-item--tag'>{elem}</span>)) }</div>
-                        <div className='img-item--link'>wocao</div>
+                        <div className='img-item--icon' onClick={() => setModalImgSource(elem.media.m)}><PlusCircleTwoTone style={{ fontSize: '40px' }} /></div>
+                        <div className='img-item--static'>{elem.title}</div>
+                        <div className='img-item--static'> <Avatar icon={<UserOutlined />} /><span>{elem.author}</span></div>
+                        <div className='img-item--static'>{tagArr.length > 0 && tagArr.map((elem,index) => {
+                            if (index < 3) {
+                                return (<span className='img-item--tag'>{elem.substring(0,6)}</span>)
+                            } else {
+                                return null;
+                            }
+                        })}</div>
+                        <div className='img-item--static'><FieldTimeOutlined /><span>{moment(elem.date_taken).format('DD/MM/YYYY')}</span></div>
+                        <div className='img-item--link'><a href={elem.link} target='_blank'><Html5TwoTone style={{ fontSize: '40px' }} /></a></div>
                         {category === 'results' && !addedToFavorite && <div className='img-item--favourite' onClick={() => this.handleAddToFavorite(elem.title, elem)}><HeartTwoTone twoToneColor="#eb2f96" /></div>}
                     </div>
                     <img className='img-item--pic' src={elem.media.m} onError={this.handleImgError} alt={elem.title}></img>
-                </div>
-                <div className='img-item__description'>
                 </div>
             </li>
 
