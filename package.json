@@ -51,7 +51,8 @@
     "eject": "react-app-rewired eject",
     "server": "nodemon src/server.js",
     "start": "concurrently \"npm run server\" \"npm run concurrent\"",
-    "start:dev":"concurrently \"npm run server\" \"npm run concurrent:local\""
+    "start:dev":"concurrently \"npm run server\" \"npm run concurrent:local\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": [
