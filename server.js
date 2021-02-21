@@ -21,7 +21,7 @@ const cache = new LRU({
 serverRouter.get('/api/pictures/:tag', async ctx => {
     const { tag } = ctx.params;
     if (cache.peek(tag)) {
-        console.log('cache',cache.get(tag))
+        console.log('cache', cache.get(tag))
         ctx.body = cache.get(tag);
         console.log(`fetch picture feed for ${tag} from local cache`)
         return
@@ -40,6 +40,12 @@ serverRouter.get('/api/pictures/:tag', async ctx => {
             }
             ctx.status = 404
         }
+    }
+})
+
+serverRouter.get('/',async ctx=>{
+    ctx.body = {
+        message: 'connected successfully'
     }
 })
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { userLoginSaga } from '@/actions/user';
-import { fetchImg, listFav, setModalImgSource } from '@/actions/imgFeed';
+import { fetchImg, listFav } from '@/actions/imgFeed';
 import { debounce } from '@/utils';
 import { message } from 'antd';
 import './index.scss';
@@ -42,10 +42,9 @@ class Home extends React.Component {
             this.handleSubmit(e)
         }
     }
-    renderImgs = (arr, category) => arr.map((elem, index) => <ImgListItem elem={elem} index={index} category={category} />)
+    renderImgs = (arr, category) => arr.map((elem, index) => <ImgListItem elem={elem} index={index} category={category} key={index}/>)
 
     render() {
-        console.log(this.props.imgFeed)
         const { imgList, modalImgSource, favList } = this.props.imgFeed;
         return (
             <>

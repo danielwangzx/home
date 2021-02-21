@@ -14,9 +14,9 @@ export default function Header() {
     return (
         <header>
         <nav className={`stretchy-nav ${navVisible?'nav-is-visible':''}`}>
-          <a className="nav-trigger" onClick={handleToggle}>
+          <span className="nav-trigger" onClick={handleToggle}>
             <span />
-          </a>
+          </span>
           <ul className="links">
             <li>
               <a href="#home" className={`lists ${itemActive===1?'active':''}`} onClick={()=>setItemActive(1)}>

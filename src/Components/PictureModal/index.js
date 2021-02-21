@@ -32,7 +32,7 @@ class PictureModal extends React.Component {
         const {resouce} = this.props;
         return (<div className='picture-modal__overlay'>
             <div className='picture-modal__container' >
-                <img ref={this.wrapperRef} className='picture-modal--img' src={resouce}></img>
+                <img ref={this.wrapperRef} className='picture-modal--img' alt='modal' src={resouce}></img>
             </div>
 \        </div>)
     }

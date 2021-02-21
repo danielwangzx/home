@@ -6,6 +6,9 @@ import PrivateRoute from './Components/PrivateRoute'
 import NotFound from '@/Pages/NotFound'
 
 class App extends React.Component {
+  componentDidMount(){
+    fetch('/')
+  }
   render() {
     return (
       <Switch>

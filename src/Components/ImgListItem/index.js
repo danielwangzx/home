@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.scss';
 import { message, Avatar } from 'antd';
 import { HeartTwoTone, UserOutlined, FieldTimeOutlined, PlusCircleTwoTone, Html5TwoTone } from '@ant-design/icons';
 import { connect } from 'react-redux';
@@ -40,13 +39,13 @@ class ImgListItem extends React.Component {
                         <div className='img-item--static'> <Avatar icon={<UserOutlined />} /><span>{elem.author}</span></div>
                         <div className='img-item--static'>{tagArr.length > 0 && tagArr.map((elem,index) => {
                             if (index < 3) {
-                                return (<span className='img-item--tag'>{elem.substring(0,6)}</span>)
+                                return (<span className='img-item--tag' key={index}>{elem.substring(0,6)}</span>)
                             } else {
                                 return null;
                             }
                         })}</div>
                         <div className='img-item--static'><FieldTimeOutlined /><span>{moment(elem.date_taken).format('DD/MM/YYYY')}</span></div>
-                        <div className='img-item--link'><a href={elem.link} target='_blank'><Html5TwoTone style={{ fontSize: '40px' }} /></a></div>
+                        <div className='img-item--link'><a href={elem.link} target='_blank' rel="noreferrer"><Html5TwoTone style={{ fontSize: '40px' }} /></a></div>
                         {category === 'results' && !addedToFavorite && <div className='img-item--favourite' onClick={() => this.handleAddToFavorite(elem.title, elem)}><HeartTwoTone twoToneColor="#eb2f96" /></div>}
                     </div>
                     <img className='img-item--pic' src={elem.media.m} onError={this.handleImgError} alt={elem.title}></img>
