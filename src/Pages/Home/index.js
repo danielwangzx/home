@@ -5,10 +5,16 @@ import { fetchImg } from '@/actions/imgFeed';
 import { debounce } from '@/utils';
 import { message } from 'antd';
 import './index.scss';
-import Header from '@/Components/header'
+import Header from '@/Components/header';
+import SectionContainer from '@/Components/SectionContainer';
+import ImgListItem from '@/Components/ImgListItem';
+import PictureModal from '@/Components/PictureModal';
 
 @connect(({ user, imgFeed }) => ({ user, imgFeed }), { userLoginSaga, fetchImg })
 class Home extends React.Component {
+    state = {
+        showPictureModal: false
+    }
     handleSubmit = (e) => {
         const { value } = e.target;
         const { fetchImg } = this.props;
@@ -19,7 +25,7 @@ class Home extends React.Component {
                 console.log('you attemped to get feed with following tags:', tags)
                 fetchImg(tags)
             } else {
-                message.info('flicker takes meaningfull word as input can be seperated by comma or blankspace', 1)
+                message.info('flicker takes meaningfull word as input which can be seperated by comma or blankspace and other markings', 1)
             }
         }
     }
@@ -32,7 +38,11 @@ class Home extends React.Component {
             this.handleSubmit(e)
         }
     }
+    renderImgs = (arr, category) => arr.map((elem, index) => <ImgListItem elem={elem} index={index} category={category} />)
     render() {
+        console.log(this.props.imgFeed)
+        const { imgList, ModalImgResource } = this.props.imgFeed;
+        const { showPictureModal } = this.state;
         return (
             <>
                 <Header />
@@ -40,7 +50,14 @@ class Home extends React.Component {
                     <h4 className='home-page__heading' id='home'>flicker <span>feed</span></h4>
                     <div className='home-page__sub-heading'>Search for flicker picktures, result updates as you type</div>
                     <input type="search" placeholder=" cat" onChange={this.handleDebouncedChange} onKeyDown={this.handleKeyDown} />
+                    <SectionContainer category='favourite'>
+                        {this.renderImgs(imgList, 'favourite')}
+                    </SectionContainer>
+                    <SectionContainer category='results'>
+                        {this.renderImgs(imgList, 'results')}
+                    </SectionContainer>
                 </div>
+                {showPictureModal && <PictureModal resouce={ModalImgResource} />}
             </>
         )
     }

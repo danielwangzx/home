@@ -1,0 +1,28 @@
+.img-section {
+  &__container {
+    width: 100%;
+    margin-top: 15px;
+    @media only screen and (min-width: 480px) {
+        padding: 0 40px;
+      }
+  }
+  &__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+    border-bottom: 2px solid #dda51e;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    color: #dda51e;
+    text-transform: uppercase;
+  }
+}
+.img-list__container{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
