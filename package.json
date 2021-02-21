@@ -23,8 +23,12 @@
     "font-awesome": "^4.7.0",
     "history": "^5.0.0",
     "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
     "koa-cors": "0.0.16",
+    "koa-logger": "^3.2.1",
+    "koa-mount": "^4.0.0",
     "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
     "lodash": "^4.17.21",
     "lru-cache": "^6.0.0",
     "moment": "^2.29.1",
@@ -51,7 +55,7 @@
     "eject": "react-app-rewired eject",
     "server": "nodemon server.js",
     "start": "concurrently \"npm run server\" \"npm run concurrent\"",
-    "start:dev":"concurrently \"npm run server\" \"npm run concurrent:dev\"",
+    "start:dev": "concurrently \"npm run server\" \"npm run concurrent:dev\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "eslintConfig": {

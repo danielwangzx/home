@@ -38,7 +38,7 @@ class ImgListItem extends React.Component {
                 <div className='img-item__container'>
                     <div className='img-item--overlay'>
                         <div className='img-item--icon' onClick={() => setModalImgSource(elem.media.m)}><PlusCircleTwoTone style={{ fontSize: '40px' }} /></div>
-                        <div className='img-item--static'>{elem.title}</div>
+                        <div className='img-item--static'>{elem.title.substring(0,12)}</div>
                         <div className='img-item--static'> <Avatar icon={<UserOutlined />} /><span>{elem.author}</span></div>
                         <div className='img-item--static'>{tagArr.length > 0 && tagArr.map((elem, index) => {
                             if (index < 3) {

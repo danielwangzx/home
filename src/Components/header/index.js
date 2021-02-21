@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import './index.scss';
-// const navTrigger = document.querySelector(".nav-trigger");
-// const nav = document.querySelector(".stretchy-nav");
-// navTrigger.addEventListener("click", function () {
-//   nav.classList.toggle("nav-is-visible");
-// });
+
 export default function Header() {
     const [navVisible,setNavVisible] = useState(false);
     const [itemActive,setItemActive] = useState(1);

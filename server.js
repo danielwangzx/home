@@ -5,6 +5,11 @@ const fetch = require('node-fetch')
 const LRU = require('lru-cache')
 const assert = require('assert')
 const cors = require('@koa/cors');
+const bodyParser = require("koa-bodyparser");
+const path = require('path');
+const mount = require('koa-mount');
+const serve = require('koa-static');
+const Logger = require('koa-logger');
 
 const serverRouter = new Router()
 
@@ -17,6 +22,10 @@ const cache = new LRU({
     maxAge,
     max: 100,
 })
+console.log(__dirname)
+const static_pages = new Koa();
+static_pages.use(serve(__dirname + "/build")); //serve the build directory
+
 
 serverRouter.get('/api/pictures/:tag', async ctx => {
     const { tag } = ctx.params;
@@ -42,15 +51,21 @@ serverRouter.get('/api/pictures/:tag', async ctx => {
     }
 })
 
-serverRouter.get('/',async ctx=>{
-    ctx.body = {
-        message: 'connected successfully'
-    }
-})
+// serverRouter.get('/',async ctx=>{
+//     ctx.body = {
+//         message: 'connected successfully'
+//     }
+// })
 
 const app = new Koa()
+app.use(mount("/", static_pages));
 app.use(cors());
-app.use(serverRouter.routes())
+app.use(Logger());
+app.use(bodyParser())
+app.use(serverRouter.routes()).use(serverRouter.allowedMethods());
+// app.use(async ctx=>{
+//     ctx.body = 'invalid endpoint'
+// })
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`App listens on PORT: ${PORT}`)
