@@ -48,15 +48,14 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "concurrent": "react-app-rewired start",
     "concurrent:dev": "PORT=8000 react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject",
     "server": "nodemon server.js",
-    "start": "concurrently \"npm run server\" \"npm run concurrent\"",
     "start:dev": "concurrently \"npm run server\" \"npm run concurrent:dev\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "eslintConfig": {
     "extends": [
