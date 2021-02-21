@@ -58,7 +58,7 @@
     "server": "nodemon server.js",
     "start:dev": "concurrently \"npm run server\" \"npm run concurrent:dev\"",
     "start": "node server.js",
-    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "eslintConfig": {
     "extends": [
