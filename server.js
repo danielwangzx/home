@@ -22,7 +22,6 @@ const cache = new LRU({
     maxAge,
     max: 100,
 })
-console.log(__dirname)
 const static_pages = new Koa();
 static_pages.use(serve(__dirname + "/build")); //serve the build directory
 
