@@ -24,7 +24,7 @@ const cache = new LRU({
 })
 console.log(__dirname)
 const static_pages = new Koa();
-static_pages.use(serve(__dirname + "client/build")); //serve the build directory
+static_pages.use(serve(__dirname + "/build")); //serve the build directory
 
 
 serverRouter.get('/api/pictures/:tag', async ctx => {
