@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).and rewired with cumstom CRA, it also comes with a backend server powered by koa. 
+to start project locally, either npm run build before you npm run start, or npm run start:dev.
 
 ## Available Scripts
 
